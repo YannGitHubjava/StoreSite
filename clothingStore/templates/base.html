@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    {% load static %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %} Clothing store {% endblock title %}</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <!-- Customize css for home page -->
+    <link rel="stylesheet" href="{% static 'clothingStore/css/home.css' %}">
+
+    <!-- footer imported style theme -->
+    <link rel="stylesheet" href="{% static 'clothingStore/css/home_footer.css'%}">
+
+
+    <script type="application/javascript">
+
+        $(function() {
+            var currentUrl = document.location.href.split('/');
+            var pageUrl = currentUrl[currentUrl.length - 2];
+            $('.nav li a').each(function(){
+                var navLink = $(this).attr('href');
+                var fixLink = navLink.substring(1, navLink.length);
+
+                if (pageUrl == fixLink) {
+                    $('.nav li').removeClass('active');
+                    $(this).parent().addClass('active');
+                }
+
+
+
+            });
+
+            $('.nav li a').click(function(){
+                $('.nav li').removeClass('active');
+                $(this).parent().addClass('active');
+            });
+
+        });
+
+
+
+    </script>
+
+</head>
+
+
+<body data-spy="spyscroll" data-target=".navbar-default">
+     <!-- Javascript for navbar active class -->
+
+
+    <!-- header start -->
+
+    <nav class="navbar navbar-default navbar-static-top" role="navigation">
+        <div class="navbar-header">
+            <a class="navbar-brand" style="color:#ffffff;" href="#">StoreSite</a>
+        </div>
+
+        <div>
+            <ul id="ul_color" class="nav navbar-nav">
+                <li class="active">
+                    <a href="/">Home</a>
+                </li>
+                <li><a href="/product">Product</a></li>
+                <li><a href="/about">About</a></li>
+            </ul>
+        </div>
+
+    </nav>
+
+    <!-- End Header -->
+
+    {% block content%}
+    {% endblock content %}
+
+
+    <!-- start footer -->
+
+    <div class= "{% block property %}{% endblock property%}" >
+        <footer>
+            <div class="container">
+                <div class="row text-center">
+                    <div class="col-md-6">
+                        <h3>Company Name</h3>
+                        <p>Praesent sed lobortis mi. Suspendisse vel placerat ligula. Vivamus ac sem lacus. Ut vehicula rhoncus elementum. Etiam quis tristique lectus. Aliquam in arcu eget velit pulvinar dictum vel in justo.</p>
+                    </div>
+
+                    <div class="col-md-6">
+                        <h3>About</h3>
+                        <ul>
+                            <li><a href="#">Company</a></li>
+                            <li><a href="#">Team</a></li>
+                            <li><a href="#">Careers</a></li>
+                        </ul>
+                    </div>
+                    <div id="icon_pad" class="col-md-12 col-sm-4 item social"><a href="#"><i class="icon ion-social-facebook"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-snapchat"></i></a><a href="#"><i class="icon ion-social-instagram"></i></a></div>
+                </div>
+                <p class="copyright" style>Company Name © 2016</p>
+            </div>
+        </footer>
+    </div>
+    <!-- end footer -->
+
+</body>
+</html>

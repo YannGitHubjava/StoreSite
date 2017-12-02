@@ -1,0 +1,27 @@
+.navbar.navbar-default.navbar-static-top {
+  background:#4a90a6;
+}
+
+.navbar {
+  margin-bottom:0;
+  padding:30px;
+}
+
+.navbar-brand {
+  font-size:30px;
+}
+
+#icon_pad {
+  padding-top:50px;
+}
+
+#ul_color a {
+  color:#ffffff;
+}
+
+.thumbnail .img-fit {
+    width: 100%;
+    height:250px;
+}
+
+

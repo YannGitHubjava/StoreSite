@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+
+    <div class="container">
+
+        <!-- bootstrap badge -->
+        <div class="well">
+            <h4> All Collections<span class="label label-default">all</span></h4>
+        </div>
+
+        <!-- /End badge -->
+
+
+        <div class="row">
+            <!-- Start Thumbnails-->
+            {% for product in products %}
+                <div class="col-sm-6 col-md-4">
+                    <div class="thumbnail">
+                        <img class="img-fit img-responsive" src="{{ product.image.url }}" alt="{{ product.name }}">
+                        <div class="caption">
+                            <h3>{{ product.name }} </h3>
+                            <p>${{ product.price }} </p>
+                            <p><a class="btn btn-primary" href="#" role="button">Buy now</a></p>
+                        </div>
+                    </div>
+                </div>
+
+            {% endfor %}
+
+        </div>
+
+    </div>
+
+{% endblock content %}
+{% block property%} footer-dark {% endblock property%}

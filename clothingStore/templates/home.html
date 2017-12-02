@@ -1,0 +1,59 @@
+
+{% extends "base.html" %}
+
+{% block title %} Clothing store {% endblock title %}
+
+{% block nav_active %} active {% endblock nav_active %}
+
+{% block content %}
+
+
+
+    <!-- section start -->
+    <div class="contaier"></div>
+        <div class="jumbotron text-center" >
+            <h1>Checkout our Winter Collection</h1>
+            <br>
+            <h3>Dress stylish in all season!</h3>
+            <h5><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></h5>
+
+        </div>
+
+        <!-- end Section -->
+
+
+        <div class="container">
+            <!-- bootstrap badge -->
+            <div class="well">
+                <h4> New Collection<span class="label label-default">New</span></h4>
+            </div>
+
+            <!-- /End badge -->
+
+            <!-- Start Thumbnails-->
+            <div class="row">
+
+                {% for item in last_prod %}
+                    <div class="col-sm-6 col-md-4">
+                        <div class="thumbnail">
+                            <img class="img-fit img-responsive" src="{{ item.image.url }}" alt="{{item.name}}">
+                            <div class="caption">
+                                <h3>Img Label</h3>
+                                <p>Item Description</p>
+                                <p><a class="btn btn-primary" href="#" role="button">Buy now</a></p>
+                            </div>
+                        </div>
+                    </div>
+
+                {% endfor %}
+
+            </div>
+            <!-- End Thumbnails -->
+
+
+        </div>
+{% endblock content %}
+{% block property%} footer-dark {% endblock property%}
+
+
+
